@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page">
+        <h1>Свяжитесь с нами</h1>
+        <p>Есть вопрос или предложение? Нажмите на кнопку и напишите нам.</p>
+        <button type="button" id="open-form" class="btn btn-primary">Обратная связь</button>
+    </main>
+
+    <footer class="footer">
+        <p>Белоусов Владислав</p>
+    </footer>
+
+    <div id="overlay" class="overlay" hidden>
+        <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+            <button type="button" id="close-form" class="close" aria-label="Закрыть">&times;</button>
+            <h2 id="popup-title">Обратная связь</h2>
+            <form id="feedback-form" novalidate>
+                <label for="fio">ФИО</label>
+                <input type="text" id="fio" name="fio" autocomplete="name" required>
+
+                <div class="row">
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
+                    <div>
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
+                    </div>
+                </div>
+
+                <label for="org">Организация</label>
+                <input type="text" id="org" name="organization" autocomplete="organization" required>
+
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" rows="3" required></textarea>
+
+                <label class="check" for="agree">
+                    <input type="checkbox" id="agree" name="agree" required>
+                    <span>Согласен с <a href="#privacy">политикой обработки персональных данных</a></span>
+                </label>
+
+                <button type="submit" id="submit" class="btn btn-primary">Отправить</button>
+                <p id="status" class="status" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
